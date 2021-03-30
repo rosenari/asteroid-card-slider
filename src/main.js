@@ -7,6 +7,9 @@ class Cardslider {
             //Init Dom Element;
             this.elem = document.getElementById(elem);
 
+            //validate options
+            OptionFactory.validate(options);
+
             //Init Options
             this.options = {
                 width: options.width || "360px",
@@ -21,6 +24,24 @@ class Cardslider {
             throw err;
         }
 
+    }
+
+    /*
+    render slider
+*/
+    render() {
+        this.elem.appendChild();
+    }
+
+    /*
+        private method
+    */
+    #createCard() {
+        this.elem = 'tt';
+    }
+
+    #createPoint() {
+        let pointElem = document.createElement("");
     }
 
 }
