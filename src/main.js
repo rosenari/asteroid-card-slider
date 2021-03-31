@@ -1,6 +1,11 @@
 import { OptionFactory } from "./utils";
 
 class Cardslider {
+    /**
+    * Initialize 
+    * @param { Element } elem
+    * @param { Object } options
+    */
     constructor(elem, options) {
 
         try {
@@ -26,22 +31,19 @@ class Cardslider {
 
     }
 
-    /*
-    render slider
-*/
-    render() {
-        this.elem.appendChild();
-    }
-
-    /*
-        private method
+    /**
+    * method createCard in Cardslider class
+    * private
+    * @returns { Element } return CardElement
     */
-    #createCard() {
-        this.elem = 'tt';
-    }
+    #createCard(imgSrc, url) {
+        let card = document.createElement(`
+            <div onClick="() => { location.href=${url} }">
+                <img src="${imgSrc}" style="height:100%" />
+            </div>
+        `);
 
-    #createPoint() {
-        let pointElem = document.createElement("");
+        return card;
     }
 
 }
