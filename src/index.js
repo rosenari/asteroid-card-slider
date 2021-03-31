@@ -36,24 +36,20 @@ class Cardslider {
     public
     */
     render() {
-        let cards = this.options.images.map((v) => {
-            return this.#createCard(v);
-        });
-
-        this.elem.append(cards);
+        for (let image of this.options.images) {
+            let card = this.#createCard(image);
+            this.elem.appendChild(card);
+        }
     }
 
     /**
     * method createCard in Cardslider class
     * private
-    * @returns { Element } return CardElement
+    * @returns { Element } return HTMLDivElement
     */
     #createCard(imgSrc) {
-        let card = document.createElement(`
-            <div>
-                <img src="${imgSrc}" style="height:100%" />
-            </div>
-        `);
+        let card = document.createElement('div');
+        card.innerHTML = `<img src="${imgSrc}" style="height:100%" />`;
 
         return card;
     }
