@@ -69,6 +69,6 @@ export class imagesFactory {
     * @param value Array
     */
     validate(value) {
-        if (Array.isArray(value)) throw Error('images type must have to array');
+        if (!Array.isArray(value)) throw Error('images type must have to array');
     }
 }

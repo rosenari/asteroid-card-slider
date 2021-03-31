@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>asteroid-card-slider</title>
-    <script src="./src/index.js"></script>
+    <script src="./dist/main.js"></script>
 </head>
 
 <body>
@@ -16,9 +16,7 @@
     <script>
         //DOM LOADED => Handler Call
         document.addEventListener("DOMContentLoaded", function () {
-            let slider = new Cardslider("slider", {
-                width: "150px"
-            });
+            let slider = new Cardslider("slider", { images: ["https://user-images.githubusercontent.com/49670068/113144366-1e726680-9268-11eb-922b-0ac1ff0aeb23.png"] });
         });
     </script>
 </body>
