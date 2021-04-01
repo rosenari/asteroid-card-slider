@@ -13,7 +13,8 @@
 
 .card{
     flex: 0 0 auto;
-    height:100%;
+    width:33%;
+    height:90%;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 3px 3px 3px gray;
@@ -21,5 +22,30 @@
 
     &:last-child{
         margin-right:0px;
+    }
+}
+
+.pointbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:10%;
+}
+
+.point {
+    display: inline-block;
+    margin-right:10px;
+    position: relative;
+    width:5px;
+    height:5px;
+    border-radius: 50%;
+    border: rgb(163, 0, 163) solid 1px;
+    background:white;
+    cursor:pointer;
+
+    &.active{
+        background:rgb(163, 0, 163);
     }
 }
