@@ -1,0 +1,25 @@
+.container{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior:smooth;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: row;
+
+    &::-webkit-scrollbar{
+        display: none !important;
+    }
+}
+
+.card{
+    flex: 0 0 auto;
+    height:100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px gray;
+    margin-right:15px;
+
+    &:last-child{
+        margin-right:0px;
+    }
+}

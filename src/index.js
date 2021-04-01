@@ -1,3 +1,4 @@
+import "./scss/cardslider.scss";
 import { OptionFactory } from "./utils";
 
 class Cardslider {
@@ -36,10 +37,16 @@ class Cardslider {
     public
     */
     render() {
+        let container = document.createElement('div');
+        container.style.width = this.options.width;
+        container.style.height = this.options.height;
+        container.classList.add('container');
+
         for (let image of this.options.images) {
             let card = this.#createCard(image);
-            this.elem.appendChild(card);
+            container.appendChild(card);
         }
+        this.elem.appendChild(container);
     }
 
     /**
@@ -49,6 +56,8 @@ class Cardslider {
     */
     #createCard(imgSrc) {
         let card = document.createElement('div');
+        card.classList.add("card");
+        card.style.width = "33%";
         card.innerHTML = `<img src="${imgSrc}" style="height:100%" />`;
 
         return card;
