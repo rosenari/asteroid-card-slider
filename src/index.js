@@ -43,7 +43,7 @@ class Cardslider {
         let container = document.createElement('div');
         container.style.width = this.options.width;
         container.style.height = this.options.height;
-        container.classList.add('container');
+        container.classList.add('slider-wrapper');
 
         for (let image of this.options.images) {
             let card = this.#createCard(image);
@@ -66,7 +66,7 @@ class Cardslider {
     */
     #createCard(imgSrc) {
         let card = document.createElement('div');
-        card.classList.add("card");
+        card.classList.add("slider-wrapper__card");
         card.innerHTML = `<img src="${imgSrc}" style="height:100%" />`;
 
         return card;
@@ -80,13 +80,13 @@ class Cardslider {
     #createPoint() {
 
         let pointbox = document.createElement('div');
-        pointbox.classList.add('pointbox');
+        pointbox.classList.add('point-box');
         pointbox.style.width = this.options.width;
         pointbox.style.height = "20px";
 
         for (let i = 0; i < this.points.length; i++) {
             let point = document.createElement('div');
-            point.classList.add('point');
+            point.classList.add('point-box__point');
 
             if (this.points[i].active) point.classList.add('active');
 

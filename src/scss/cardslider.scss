@@ -1,4 +1,13 @@
-.container{
+/**
+BEM ( Block_Element--Modifier)
+ex : login-form__login-btn--small
+
+big layout box : container
+common layout box : wrapper
+layout box in wrapper : box
+*/
+
+.slider-wrapper{
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-behavior:smooth;
@@ -11,7 +20,7 @@
     }
 }
 
-.card{
+.slider-wrapper__card{
     flex: 0 0 auto;
     width:33%;
     height:90%;
@@ -25,7 +34,7 @@
     }
 }
 
-.pointbox {
+.point-box {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,7 +43,7 @@
     height:10%;
 }
 
-.point {
+.point-box__point {
     display: inline-block;
     margin-right:10px;
     position: relative;
