@@ -58,6 +58,8 @@ class Cardslider {
             this.resizeHandler();
             window.addEventListener('resize',
                 _.debounce(this.resizeHandler, 400));
+            this.container.addEventListener('scroll',
+                _.throttle(this.scrollHandler, 150));
         };
     }
 
@@ -80,11 +82,14 @@ class Cardslider {
     @returns { Element } return PointElement
     */
     #createPoint() {
-
-        let pointbox = document.createElement('div');
-        pointbox.classList.add('point-box');
-        pointbox.style.width = this.options.width;
-        pointbox.style.height = "20px";
+        if (!this.pointbox) {
+            this.pointbox = document.createElement('div');
+            this.pointbox.classList.add('point-box');
+            this.pointbox.style.width = this.options.width;
+            this.pointbox.style.height = "20px";
+            this.elem.appendChild(this.pointbox);
+        }
+        this.pointbox.innerHTML = '';
 
         for (let i = 0; i < this.points.length; i++) {
             let point = document.createElement('div');
@@ -92,10 +97,8 @@ class Cardslider {
 
             if (this.points[i].active) point.classList.add('active');
 
-            pointbox.appendChild(point);
+            this.pointbox.appendChild(point);
         }
-
-        this.elem.appendChild(pointbox);
     }
 
     /**
@@ -119,6 +122,22 @@ class Cardslider {
 
         if (!this.points || JSON.stringify(temp) != JSON.stringify(this.points)) {
             this.points = temp;
+            this.#createPoint();
+        }
+    }
+
+    /**
+     function scrollHandler in Cardslider class
+     public
+     */
+    scrollHandler = () => {
+        let scrollLeft = this.container.scrollLeft;
+        let activeIndex = Math.ceil(1 + (scrollLeft / this.container.clientWidth)) - 1;
+        if (this.points && this.points[activeIndex] && !this.points[activeIndex].active) {
+            for (let i = 0; i < this.points.length; i++) {
+                this.points[i].active = false;
+            }
+            this.points[activeIndex].active = true;
             this.#createPoint();
         }
     }
