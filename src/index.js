@@ -94,6 +94,7 @@ class Cardslider {
         for (let i = 0; i < this.points.length; i++) {
             let point = document.createElement('div');
             point.classList.add('point-box__point');
+            point.onclick = this.scrollTo.bind(null, this.points[i].x);
 
             if (this.points[i].active) point.classList.add('active');
 
@@ -140,6 +141,10 @@ class Cardslider {
             this.points[activeIndex].active = true;
             this.#createPoint();
         }
+    }
+
+    scrollTo = (x) => {
+        this.container.scrollLeft = x;
     }
 
 }
