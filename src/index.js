@@ -125,6 +125,7 @@ class Cardslider {
 
 }
 
-window.Cardslider = Cardslider;
+window.asteroid = {};
+window.asteroid.Cardslider = Cardslider;
 
 export default Cardslider;
