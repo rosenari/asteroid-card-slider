@@ -1,5 +1,6 @@
 import "./scss/cardslider.scss";
 import { OptionFactory } from "./utils";
+import _ from 'lodash';
 
 class Cardslider {
     /**
@@ -55,7 +56,8 @@ class Cardslider {
         /** createPoint */
         if (this.options.isPoint) {
             this.resizeHandler();
-            window.addEventListener('resize', this.resizeHandler);
+            window.addEventListener('resize',
+                _.debounce(this.resizeHandler, 400));
         };
     }
 
