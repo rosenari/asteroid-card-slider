@@ -40,17 +40,6 @@ export class heightFactory {
     }
 }
 
-export class isAutoFactory {
-    /**
-    * method 
-    * validate
-    * @param value boolean
-    */
-    validate(value) {
-        if (typeof value !== 'boolean') throw Error('isAuto type must have to boolean');
-    }
-}
-
 export class isPointFactory {
     /**
     * method 

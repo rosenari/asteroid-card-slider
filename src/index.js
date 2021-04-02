@@ -23,7 +23,6 @@ class Cardslider {
             this.options = {
                 width: options.width || "360px",
                 height: options.height || "150px",
-                isAuto: options.isAuto || false,
                 isPoint: options.isPoint || true,
                 images: options.images || []
             }
