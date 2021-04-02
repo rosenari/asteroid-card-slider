@@ -50,3 +50,6 @@ let cardslider = new Cardslider("slider", {
 - height : cardslider Height (type : string , default : "150px")
 - isPoint : point visible (type : boolean , default : true)
 - images : images url list (type : array , default : [])
+
+### View
+![image](https://user-images.githubusercontent.com/49670068/113424950-f28fe600-940b-11eb-86a5-52193adae5ce.png)
