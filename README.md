@@ -32,7 +32,7 @@ $ npm run build
 
 ### ES2015+ environments
 ```javascript
-import Cardslider from "./dist/index.js";
+import { Cardslider } from "./dist/index.js";
 
 let cardslider = new Cardslider("slider", {
                         width: "400px",

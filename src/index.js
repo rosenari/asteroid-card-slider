@@ -2,7 +2,7 @@ import "./scss/cardslider.scss";
 import { OptionFactory } from "./utils";
 import _ from 'lodash';
 
-class Cardslider {
+export class Cardslider {
     /**
     * Initialize 
     * @param { Element } elem
@@ -147,8 +147,3 @@ class Cardslider {
     }
 
 }
-
-window.asteroid = {};
-window.asteroid.Cardslider = Cardslider;
-
-export default Cardslider;
